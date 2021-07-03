@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C604C3D579A807A8F485129 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5C6047944C9DF0CEEBDABB7E /* .gitignore */; };
 		5C730D5B269107FE0001A1C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C730D5A269107FE0001A1C4 /* AppDelegate.swift */; };
 		5C730D5D269107FF0001A1C4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5C730D5C269107FF0001A1C4 /* GameScene.sks */; };
 		5C730D5F269107FF0001A1C4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5C730D5E269107FF0001A1C4 /* Actions.sks */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C6047944C9DF0CEEBDABB7E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 		5C730D57269107FE0001A1C4 /* ZombieConga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieConga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C730D5A269107FE0001A1C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C730D5C269107FF0001A1C4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 			children = (
 				5C730D59269107FE0001A1C4 /* ZombieConga */,
 				5C730D58269107FE0001A1C4 /* Products */,
+				5C6047944C9DF0CEEBDABB7E /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +134,7 @@
 				5C730D5D269107FF0001A1C4 /* GameScene.sks in Resources */,
 				5C730D68269108000001A1C4 /* Assets.xcassets in Resources */,
 				5C730D5F269107FF0001A1C4 /* Actions.sks in Resources */,
+				5C604C3D579A807A8F485129 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2EB4KC7497;
 				INFOPLIST_FILE = ZombieConga/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2EB4KC7497;
 				INFOPLIST_FILE = ZombieConga/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
