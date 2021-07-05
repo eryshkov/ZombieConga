@@ -9,25 +9,23 @@
 /* Begin PBXBuildFile section */
 		5C604C3D579A807A8F485129 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5C6047944C9DF0CEEBDABB7E /* .gitignore */; };
 		5C730D5B269107FE0001A1C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C730D5A269107FE0001A1C4 /* AppDelegate.swift */; };
-		5C730D5D269107FF0001A1C4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5C730D5C269107FF0001A1C4 /* GameScene.sks */; };
-		5C730D5F269107FF0001A1C4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5C730D5E269107FF0001A1C4 /* Actions.sks */; };
 		5C730D61269107FF0001A1C4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C730D60269107FF0001A1C4 /* GameScene.swift */; };
 		5C730D63269107FF0001A1C4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C730D62269107FF0001A1C4 /* GameViewController.swift */; };
 		5C730D66269107FF0001A1C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C730D64269107FF0001A1C4 /* Main.storyboard */; };
 		5C730D68269108000001A1C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C730D67269108000001A1C4 /* Assets.xcassets */; };
+		5CBB3BBD2693A28F00B9D999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CBB3BBC2693A28F00B9D999 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C6047944C9DF0CEEBDABB7E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 		5C730D57269107FE0001A1C4 /* ZombieConga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieConga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C730D5A269107FE0001A1C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C730D5C269107FF0001A1C4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		5C730D5E269107FF0001A1C4 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		5C730D60269107FF0001A1C4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		5C730D62269107FF0001A1C4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5C730D65269107FF0001A1C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C730D67269108000001A1C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C730D69269108000001A1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CBB3BBC2693A28F00B9D999 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +60,10 @@
 			isa = PBXGroup;
 			children = (
 				5C730D5A269107FE0001A1C4 /* AppDelegate.swift */,
-				5C730D5C269107FF0001A1C4 /* GameScene.sks */,
-				5C730D5E269107FF0001A1C4 /* Actions.sks */,
 				5C730D60269107FF0001A1C4 /* GameScene.swift */,
 				5C730D62269107FF0001A1C4 /* GameViewController.swift */,
 				5C730D64269107FF0001A1C4 /* Main.storyboard */,
+				5CBB3BBC2693A28F00B9D999 /* LaunchScreen.storyboard */,
 				5C730D67269108000001A1C4 /* Assets.xcassets */,
 				5C730D69269108000001A1C4 /* Info.plist */,
 			);
@@ -131,9 +128,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C730D66269107FF0001A1C4 /* Main.storyboard in Resources */,
-				5C730D5D269107FF0001A1C4 /* GameScene.sks in Resources */,
+				5CBB3BBD2693A28F00B9D999 /* LaunchScreen.storyboard in Resources */,
 				5C730D68269108000001A1C4 /* Assets.xcassets in Resources */,
-				5C730D5F269107FF0001A1C4 /* Actions.sks in Resources */,
 				5C604C3D579A807A8F485129 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
