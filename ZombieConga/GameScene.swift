@@ -19,7 +19,10 @@ class GameScene: SKScene {
         addChild(background)
 
         zombie.position = CGPoint(x: 400, y: 400)
-        zombie.setScale(2)
         addChild(zombie)
+    }
+
+    override func update(_ currentTime: TimeInterval) {
+        zombie.position = CGPoint(x: zombie.position.x + 8, y: zombie.position.y)
     }
 }
