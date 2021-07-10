@@ -68,5 +68,31 @@ class GameScene: SKScene {
         print("\(dt*1000) ms since last update")
 
         move(sprite: zombie, velocity: velocity)
+        boundsCheckZombie()
+    }
+
+    func boundsCheckZombie() {
+        let bottomLeft = CGPoint.zero
+        let topRight = CGPoint(x: size.width, y: size.height)
+
+        if zombie.position.x <= bottomLeft.x {
+            zombie.position.x = bottomLeft.x
+            velocity.x = -velocity.x
+        }
+
+        if zombie.position.x >= topRight.x {
+            zombie.position.x = topRight.x
+            velocity.x = -velocity.x
+        }
+
+        if zombie.position.y <= bottomLeft.y {
+            zombie.position.y = bottomLeft.y
+            velocity.y = -velocity.y
+        }
+
+        if zombie.position.y >= topRight.y {
+            zombie.position.y = topRight.y
+            velocity.y = -velocity.y
+        }
     }
 }
