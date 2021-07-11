@@ -14,6 +14,24 @@ class GameScene: SKScene {
     var dt: TimeInterval = 0
     let zombieMovePointsPerSec: CGFloat = 480
     var velocity = CGPoint.zero
+    let playableRect: CGRect
+
+    override init(size: CGSize) {
+        let maxAspectRatio: CGFloat = 19.5/9
+        let playableHeight = size.width / maxAspectRatio
+        let playableMargin = (size.height - playableHeight) / 2
+        playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+
+        super.init(size: size)
+    }
+
+    required init(coder: NSCoder) {
+        fatalError("init(coder: ) has not been implemented")
+    }
+
+    func rotate(sprite: SKSpriteNode, direction: CGPoint) {
+        sprite.zRotation = CGFloat(atan2(Double(direction.y), Double(direction.x)))
+    }
 
     func move(sprite: SKSpriteNode, velocity: CGPoint) {
         let amountToMove = CGPoint(x: velocity.x * CGFloat(dt), y: velocity.y * CGFloat(dt))
@@ -56,6 +74,7 @@ class GameScene: SKScene {
 
         zombie.position = CGPoint(x: 400, y: 400)
         addChild(zombie)
+        debugDrawPlayableArea()
     }
 
     override func update(_ currentTime: TimeInterval) {
@@ -69,11 +88,12 @@ class GameScene: SKScene {
 
         move(sprite: zombie, velocity: velocity)
         boundsCheckZombie()
+        rotate(sprite: zombie, direction: velocity)
     }
 
     func boundsCheckZombie() {
-        let bottomLeft = CGPoint.zero
-        let topRight = CGPoint(x: size.width, y: size.height)
+        let bottomLeft = CGPoint(x: 0, y: playableRect.minY)
+        let topRight = CGPoint(x: size.width, y: playableRect.maxY)
 
         if zombie.position.x <= bottomLeft.x {
             zombie.position.x = bottomLeft.x
@@ -94,5 +114,15 @@ class GameScene: SKScene {
             zombie.position.y = topRight.y
             velocity.y = -velocity.y
         }
+    }
+
+    func debugDrawPlayableArea() {
+        let shape = SKShapeNode()
+        let path = CGMutablePath()
+        path.addRect(playableRect)
+        shape.path = path
+        shape.strokeColor = SKColor.red
+        shape.lineWidth = 4
+        addChild(shape)
     }
 }
