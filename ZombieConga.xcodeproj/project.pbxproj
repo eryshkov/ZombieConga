@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C6047CD3EA68A0CCEC134CC /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6049138206DD470E017EAE /* MyUtils.swift */; };
 		5C604C3D579A807A8F485129 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5C6047944C9DF0CEEBDABB7E /* .gitignore */; };
 		5C730D5B269107FE0001A1C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C730D5A269107FE0001A1C4 /* AppDelegate.swift */; };
 		5C730D61269107FF0001A1C4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C730D60269107FF0001A1C4 /* GameScene.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		5C6047944C9DF0CEEBDABB7E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
+		5C6049138206DD470E017EAE /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		5C730D57269107FE0001A1C4 /* ZombieConga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieConga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C730D5A269107FE0001A1C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C730D60269107FF0001A1C4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				5CBB3BBC2693A28F00B9D999 /* LaunchScreen.storyboard */,
 				5C730D67269108000001A1C4 /* Assets.xcassets */,
 				5C730D69269108000001A1C4 /* Info.plist */,
+				5C6049138206DD470E017EAE /* MyUtils.swift */,
 			);
 			path = ZombieConga;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				5C730D61269107FF0001A1C4 /* GameScene.swift in Sources */,
 				5C730D63269107FF0001A1C4 /* GameViewController.swift in Sources */,
 				5C730D5B269107FE0001A1C4 /* AppDelegate.swift in Sources */,
+				5C6047CD3EA68A0CCEC134CC /* MyUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
