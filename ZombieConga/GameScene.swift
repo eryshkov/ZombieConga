@@ -15,6 +15,7 @@ class GameScene: SKScene {
     let zombieMovePointsPerSec: CGFloat = 480
     var velocity = CGPoint.zero
     let playableRect: CGRect
+    var lastTouchLocation: CGPoint = CGPoint.zero
 
     override init(size: CGSize) {
         let maxAspectRatio: CGFloat = 19.5/9
@@ -35,8 +36,6 @@ class GameScene: SKScene {
 
     func move(sprite: SKSpriteNode, velocity: CGPoint) {
         let amountToMove = velocity * CGFloat(dt)
-        print("amnt to move \(amountToMove)")
-
         sprite.position += amountToMove
     }
 
@@ -47,6 +46,7 @@ class GameScene: SKScene {
     }
 
     func sceneTouched(touchLocation: CGPoint) {
+        lastTouchLocation = touchLocation
         moveZombieToward(location: touchLocation)
     }
 
@@ -81,11 +81,15 @@ class GameScene: SKScene {
             dt = 0
         }
         lastUpdateTime = currentTime
-        print("\(dt*1000) ms since last update")
 
-        move(sprite: zombie, velocity: velocity)
-        boundsCheckZombie()
-        rotate(sprite: zombie, direction: velocity)
+        if (zombie.position - lastTouchLocation).length() <= zombieMovePointsPerSec * CGFloat(dt) {
+            velocity = CGPoint.zero
+            zombie.position = lastTouchLocation
+        } else {
+            move(sprite: zombie, velocity: velocity)
+            boundsCheckZombie()
+            rotate(sprite: zombie, direction: velocity)
+        }
     }
 
     func boundsCheckZombie() {
