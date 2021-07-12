@@ -16,6 +16,7 @@ class GameScene: SKScene {
     var velocity = CGPoint.zero
     let playableRect: CGRect
     var lastTouchLocation: CGPoint = CGPoint.zero
+    let zombieRotateRadiansPerSec:CGFloat = 4.0 * CGFloat.pi
 
     override init(size: CGSize) {
         let maxAspectRatio: CGFloat = 19.5/9
@@ -30,8 +31,10 @@ class GameScene: SKScene {
         fatalError("init(coder: ) has not been implemented")
     }
 
-    func rotate(sprite: SKSpriteNode, direction: CGPoint) {
-        sprite.zRotation = direction.angle
+    func rotate(sprite: SKSpriteNode, direction: CGPoint, rotateRadiansPerSec: CGFloat) {
+        let shortest = shortestAngleBetween(angle1: sprite.zRotation, angle2: velocity.angle)
+        let amountToRotate = min(rotateRadiansPerSec * CGFloat(dt), abs(shortest))
+        sprite.zRotation += shortest.sign() * amountToRotate
     }
 
     func move(sprite: SKSpriteNode, velocity: CGPoint) {
@@ -88,7 +91,7 @@ class GameScene: SKScene {
         } else {
             move(sprite: zombie, velocity: velocity)
             boundsCheckZombie()
-            rotate(sprite: zombie, direction: velocity)
+            rotate(sprite: zombie, direction: velocity, rotateRadiansPerSec: zombieRotateRadiansPerSec)
         }
     }
 

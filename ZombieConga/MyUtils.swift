@@ -45,6 +45,24 @@ func /= (point: inout CGPoint, scalar: CGFloat) {
     point = point / scalar
 }
 
+func shortestAngleBetween(angle1: CGFloat,
+                          angle2: CGFloat) -> CGFloat {
+    var angle = (angle2 - angle1)
+            .truncatingRemainder(dividingBy: CGFloat.pi * 2.0)
+    if angle >= CGFloat.pi {
+        angle = angle - CGFloat.pi * 2.0
+    }
+    if angle <= -CGFloat.pi {
+        angle = angle + CGFloat.pi * 2.0
+    }
+    return angle
+}
+extension CGFloat {
+    func sign() -> CGFloat {
+        return self >= 0.0 ? 1.0 : -1.0
+    }
+}
+
 extension CGPoint {
     func length() -> CGFloat {
         return sqrt(x*x + y*y)
