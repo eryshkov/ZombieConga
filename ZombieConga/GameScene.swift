@@ -74,6 +74,7 @@ class GameScene: SKScene {
 
         zombie.position = CGPoint(x: 400, y: 400)
         addChild(zombie)
+        spawnEnemy()
         debugDrawPlayableArea()
     }
 
@@ -128,5 +129,16 @@ class GameScene: SKScene {
         shape.strokeColor = SKColor.red
         shape.lineWidth = 4
         addChild(shape)
+    }
+
+    func spawnEnemy() {
+        let enemy = SKSpriteNode(imageNamed: "enemy")
+        enemy.position = CGPoint(x: size.width + enemy.size.width/2, y: size.height / 2)
+        addChild(enemy)
+
+        let actionMove = SKAction.move(
+                to: CGPoint(x: -enemy.size.width/2, y: enemy.position.y),
+                duration: 2.0)
+        enemy.run(actionMove)
     }
 }
