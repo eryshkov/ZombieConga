@@ -17,12 +17,21 @@ class GameScene: SKScene {
     let playableRect: CGRect
     var lastTouchLocation: CGPoint = CGPoint.zero
     let zombieRotateRadiansPerSec:CGFloat = 4.0 * CGFloat.pi
+    let zombieAnimation: SKAction
 
     override init(size: CGSize) {
         let maxAspectRatio: CGFloat = 19.5/9
         let playableHeight = size.width / maxAspectRatio
         let playableMargin = (size.height - playableHeight) / 2
         playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+        var textures:[SKTexture] = []
+        for i in 1...4 {
+            textures.append(SKTexture(imageNamed: "zombie\(i)"))
+        }
+        textures.append(textures[2])
+        textures.append(textures[1])
+        zombieAnimation = SKAction.animate(with: textures,
+                timePerFrame: 0.1)
 
         super.init(size: size)
     }
@@ -43,6 +52,7 @@ class GameScene: SKScene {
     }
 
     func moveZombieToward(location: CGPoint) {
+        startZombieAnimation()
         let offset = location - zombie.position
         let direction = offset.normalized()
         velocity = direction * zombieMovePointsPerSec
@@ -94,6 +104,7 @@ class GameScene: SKScene {
 
         if (zombie.position - lastTouchLocation).length() <= zombieMovePointsPerSec * CGFloat(dt) {
             velocity = CGPoint.zero
+            stopZombieAnimation()
             zombie.position = lastTouchLocation
         } else {
             move(sprite: zombie, velocity: velocity)
@@ -148,5 +159,15 @@ class GameScene: SKScene {
                 SKAction.moveTo(x: -enemy.size.width/2, duration: 2.0)
         let actionRemove = SKAction.removeFromParent()
         enemy.run(SKAction.sequence([actionMove, actionRemove]))
+    }
+
+    func startZombieAnimation() {
+        if zombie.action(forKey: "animation") == nil {
+            zombie.run(
+                    SKAction.repeatForever(zombieAnimation),
+                    withKey: "animation")
+        } }
+    func stopZombieAnimation() {
+        zombie.removeAction(forKey: "animation")
     }
 }
